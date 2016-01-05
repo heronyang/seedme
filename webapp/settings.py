@@ -22,7 +22,18 @@ SECRET_KEY = 'j2o&tgm34csvk1$49($0_btu34(108ncza4^22@k)p+bl8a@-g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+            ],
+        },
+    },
+]
 
 ALLOWED_HOSTS = []
 
@@ -36,6 +47,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'seedme',
 )
 
 MIDDLEWARE_CLASSES = (
